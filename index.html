@@ -5,9 +5,10 @@
 	<title></title>
 
 <script type="text/javascript">
-$.get( "ajax/test.html", function( data ) {
-  $( ".result" ).html( data );
+$.get( "http://pokeapi.co/api/v2/pokemon/1/", function( data ) {
+  $( "h1" ).html( data.name );
   alert( "Load was performed." );
+  console.log(data);
 });
 </script>
 
