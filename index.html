@@ -3,6 +3,14 @@
 <head>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<title></title>
+
+<script type="text/javascript">
+$.get( "ajax/test.html", function( data ) {
+  $( ".result" ).html( data );
+  alert( "Load was performed." );
+});
+</script>
+
 </head>
 <body>
 <h1>Hello World!</h1>
