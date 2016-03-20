@@ -5,15 +5,40 @@
 	<title></title>
 
 <script type="text/javascript">
-$.get( "http://pokeapi.co/api/v2/pokemon/1/", function( data ) {
-  $( "h1" ).html( data.name );
-  alert( "Load was performed." );
-  console.log(data);
+$.get( "http://pokeapi.co/api/v1/pokemon/?limit=12", function( data ) {
+  $.each(data.objects,function(key,val){
+  	$( "#pokemon-"+(key+1) ).html( val.name );
+  console.log(val);
+  });
+  
 });
+
 </script>
 
 </head>
 <body>
 <h1>Hello World!</h1>
+<table border="1px solid black">
+	<tr>
+	    <td id="pokemon-1">1</td>
+	    <td id="pokemon-2">2</td>
+	    <td id="pokemon-3">3</td>
+	</tr>
+	<tr>
+	    <td id="pokemon-4">4</td>
+	    <td id="pokemon-5">5</td>
+	    <td id="pokemon-6">6</td>
+	</tr>
+	<tr>
+	    <td id="pokemon-7">7</td>
+	    <td id="pokemon-8">8</td>
+	    <td id="pokemon-9">9</td>
+	</tr>
+	<tr>
+	    <td id="pokemon-10">10</td>
+	    <td id="pokemon-11">11</td>
+	    <td id="pokemon-12">12</td>
+	</tr>
+</table>
 </body>
 </html>
