@@ -5,41 +5,16 @@
 	<title></title>
 
 <script type="text/javascript">
-$.get( "http://pokeapi.co/api/v1/pokemon/?limit=12", function( data ) {
+$.get( "http://pokeapi.co/api/v1/pokemon/?limit=18", function( data ) {
   $.each(data.objects,function(key,val){
-  	$( "#pokemon-"+(key+1) ).html( val.name );
-  console.log(val);
+  	$( "#rectangle"+(key+1)+" .name" ).html( val.name );
+  	console.log(val);
   });
   
 });
 
 </script>
 
-<div id="rectangle1"></div>
-<div id="rectangle2"></div>
-<div id="rectangle3"></div>
-<br/>
-<div id="rectangle4"></div>
-<div id="rectangle5"></div>
-<div id="rectangle6"></div>
-<br/>
-<div id="rectangle7"></div>
-<div id="rectangle8"></div>
-<div id="rectangle9"></div>
-<br/>
-<div id="rectangle10"></div>
-<div id="rectangle11"></div>
-<div id="rectangle12"></div>
-<br/>
-<div id="rectangle13"></div>
-<div id="rectangle14"></div>
-<div id="rectangle15"></div>
-<br/>
-<div id="rectangle16"></div>
-<div id="rectangle17"></div>
-<div id="rectangle18"></div>
-
-<div>
 <style>
 #rectangle1 {
   padding: 30px;
@@ -207,13 +182,6 @@ $.get( "http://pokeapi.co/api/v1/pokemon/?limit=12", function( data ) {
   border-radius: 12px;
 }
 
-
-</style>
-</div>
-
-<div id="rectangle19"></div>
-<div>
-<style>
 #rectangle19 {
     border: 1px solid #73FFC9;
     position:fixed;
@@ -226,32 +194,34 @@ $.get( "http://pokeapi.co/api/v1/pokemon/?limit=12", function( data ) {
     box-shadow: 2px 2px 2px #888888;
 }
 </style>
-</div>
+
 
 </head>
 <body>
-<h1>Hello World!</h1>
-<table border="1px solid black">
-	<tr>
-	    <td id="pokemon-1">1</td>
-	    <td id="pokemon-2">2</td>
-	    <td id="pokemon-3">3</td>
-	</tr>
-	<tr>
-	    <td id="pokemon-4">4</td>
-	    <td id="pokemon-5">5</td>
-	    <td id="pokemon-6">6</td>
-	</tr>
-	<tr>
-	    <td id="pokemon-7">7</td>
-	    <td id="pokemon-8">8</td>
-	    <td id="pokemon-9">9</td>
-	</tr>
-	<tr>
-	    <td id="pokemon-10">10</td>
-	    <td id="pokemon-11">11</td>
-	    <td id="pokemon-12">12</td>
-	</tr>
-</table>
+<div id="rectangle1"><div class="name"></div></div>
+<div id="rectangle2"><div class="name"></div></div>
+<div id="rectangle3"><div class="name"></div></div>
+<br/>
+<div id="rectangle4"><div class="name"></div></div>
+<div id="rectangle5"><div class="name"></div></div>
+<div id="rectangle6"><div class="name"></div></div>
+<br/>
+<div id="rectangle7"><div class="name"></div></div>
+<div id="rectangle8"><div class="name"></div></div>
+<div id="rectangle9"><div class="name"></div></div>
+<br/>
+<div id="rectangle10"><div class="name"></div></div>
+<div id="rectangle11"><div class="name"></div></div>
+<div id="rectangle12"><div class="name"></div></div>
+<br/>
+<div id="rectangle13"><div class="name"></div></div>
+<div id="rectangle14"><div class="name"></div></div>
+<div id="rectangle15"><div class="name"></div></div>
+<br/>
+<div id="rectangle16"><div class="name"></div></div>
+<div id="rectangle17"><div class="name"></div></div>
+<div id="rectangle18"><div class="name"></div></div>
+
+<div id="rectangle19"></div>
 </body>
 </html>
