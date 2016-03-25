@@ -5,18 +5,30 @@
 	<title></title>
 
 <script type="text/javascript">
-$.get( "http://pokeapi.co/api/v1/pokemon/?limit=18", function( data ) {
-  $.each(data.objects,function(key,val){
-  	$( "#rectangle"+(key+1)+" .name" ).html( val.name );
-  	console.log(val);
-  });
-  
+$( document ).ready(function() {
+    $(".pokemon").click(function(event){
+	$("#rectangle19").html($(event.target).children(".hidden-info").html());
+})
+for(var i=1; i<19; i++){
+$.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
+  //$.each(data.objects,function(key,val){
+  	$( "#rectangle"+data.id+" .name" ).html( data.name );
+  	console.log(data); 
+  	console.log("#rectangle"+data.id+" .name");
+  //});
+ 	$( "#rectangle"+data.id+" .hidden-info" ).html( data.name+"#"+data.id ); 
 });
+}
+});
+
 
 </script>
 
 <style>
-#rectangle1 {
+.hidden-info{
+	display: none;
+}
+ #rectangle1 {
   padding: 30px;
   border: 1px solid #73FFC9;
   display: inline-block;
@@ -198,29 +210,92 @@ $.get( "http://pokeapi.co/api/v1/pokemon/?limit=18", function( data ) {
 
 </head>
 <body>
-<div id="rectangle1"><div class="name"></div></div>
-<div id="rectangle2"><div class="name"></div></div>
-<div id="rectangle3"><div class="name"></div></div>
+
+<div id="rectangle1" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
+<div id="rectangle2" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
+<div id="rectangle3" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
 <br/>
-<div id="rectangle4"><div class="name"></div></div>
-<div id="rectangle5"><div class="name"></div></div>
-<div id="rectangle6"><div class="name"></div></div>
+
+<div id="rectangle4" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
+<div id="rectangle5" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle6" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
 <br/>
-<div id="rectangle7"><div class="name"></div></div>
-<div id="rectangle8"><div class="name"></div></div>
-<div id="rectangle9"><div class="name"></div></div>
+<div id="rectangle7" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle8" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle9" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
 <br/>
-<div id="rectangle10"><div class="name"></div></div>
-<div id="rectangle11"><div class="name"></div></div>
-<div id="rectangle12"><div class="name"></div></div>
+<div id="rectangle10" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle11" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle12" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
 <br/>
-<div id="rectangle13"><div class="name"></div></div>
-<div id="rectangle14"><div class="name"></div></div>
-<div id="rectangle15"><div class="name"></div></div>
+
+<div id="rectangle13" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle14" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle15" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+
 <br/>
-<div id="rectangle16"><div class="name"></div></div>
-<div id="rectangle17"><div class="name"></div></div>
-<div id="rectangle18"><div class="name"></div></div>
+<div id="rectangle16" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle17" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
+<div id="rectangle18" class="pokemon">
+<div class="name"></div>
+<div class="hidden-info"></div>
+</div>
 
 <div id="rectangle19"></div>
 </body>
