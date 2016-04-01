@@ -53,7 +53,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
  #rectangle16,#rectangle17,#rectangle18
   {
   padding: 30px;
-  border: 1px solid #945BE9;
+  border: 2px solid #945BE9;
   display: inline-block;
   margin: 10px;
   height:150px;
@@ -66,7 +66,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
 
 #rectangle19 {
-    border: 1px solid #945BE9;
+    border: 2px solid #945BE9;
     position:fixed;
     width:220px;
     height:380px;
@@ -75,6 +75,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     top:195px;
     border-radius: 12px;
     box-shadow: 2px 2px 2px #888888;
+    
 }
 
 .div10{
@@ -89,6 +90,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     background: #FFC628;
     float: left;
 }
+/*Pokemon Name in table right */
 .div200{    
     width: 50%;
     min-height: 150px;
@@ -96,15 +98,21 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     float: left;
 }
 
+#imageRectangle19{    
+        text-align: center;
+}
+
+
+
  #LoadMore, #LoadMore2{
   padding: 20px;
   border: 1px solid #945BE9;
-  display: center;
-  margin: 20px;
+  text-align: center;
+  margin: 110px;
   height: 20px;
   width: 220px;
   border-radius: 12px;
-  background-color:#FFC628;
+  background-color:#E9DA97;
   box-shadow: 2px 2px 2px #888888;
  }
 </style>
@@ -114,7 +122,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 <body>
 <div class="div10">
 <div id="Pokedex">
-   <h1>Pokedex</h1> 
+   <h1><font size="5px" face="Arial" color="red";>Pokedex</font></h1> 
    <div align="center" style="width:auto; height:auto; position:relative; float:none;">
    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="изображение" width="250" height="100">
    </div>
@@ -127,58 +135,58 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
 
 <div id="rectangle1" class="pokemon">
-<img src="http://pokeapi.co/media/img/1.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/1.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle2" class="pokemon">
-<img src="http://pokeapi.co/media/img/2.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/2.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle3" class="pokemon">
-<img src="http://pokeapi.co/media/img/3.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/3.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 <br/>
 
 <div id="rectangle4" class="pokemon">
-<img src="http://pokeapi.co/media/img/4.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/4.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle5" class="pokemon">
-<img src="http://pokeapi.co/media/img/5.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/5.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle6" class="pokemon">
-<img src="http://pokeapi.co/media/img/6.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/6.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <br/>
 <div id="rectangle7" class="pokemon">
-<img src="http://pokeapi.co/media/img/7.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/7.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle8" class="pokemon">
-<img src="http://pokeapi.co/media/img/8.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/8.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle9" class="pokemon">
-<img src="http://pokeapi.co/media/img/9.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/9.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
@@ -187,107 +195,108 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
 <br/>
 <div id="rectangle10" class="pokemon">
-<img src="http://pokeapi.co/media/img/10.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/10.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle11" class="pokemon">
-<img src="http://pokeapi.co/media/img/11.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/11.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle12" class="pokemon">
-<img src="http://pokeapi.co/media/img/12.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/12.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <br/>
 <div id="rectangle13" class="pokemon">
-<img src="http://pokeapi.co/media/img/13.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/13.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle14" class="pokemon">
-<img src="http://pokeapi.co/media/img/14.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/14.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 <div id="rectangle15" class="pokemon">
-<img src="http://pokeapi.co/media/img/15.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/15.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <br/>
 <div id="rectangle16" class="pokemon">
-<img src="http://pokeapi.co/media/img/16.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/16.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle17" class="pokemon">
-<img src="http://pokeapi.co/media/img/17.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/17.png" width="100" height="100">
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 
 <div id="rectangle18" class="pokemon">
-<img src="http://pokeapi.co/media/img/18.png">
-<div class="name"></div>
+<img src="http://pokeapi.co/media/img/18.png" width="100" height="100">
+<div class="name"align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 </div>
 <div id="LoadMore2"><a href="javascript: displ('var')">CLOSE</a></div>
+
 
 
 </div>
 
 <div class="div200">
 
-    <div id="rectangle19" class="pokemon"> 
-    <img src="http://pokeapi.co/media/img/34.png">
+    <div id="rectangle19" class="pokemon">
+    <div id="imageRectangle19"><img src="http://pokeapi.co/media/img/34.png"></div>
 
-<div>Charmander</div>
-
+<div align="center" style="width:auto; height:auto; position:relative; float:none;"><font size="4px" face="Arial" color="blue";>Pokemon Name</font></div>
+  
 <table border="1" style="width:100%">
   <tr>
-    <td>Type</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>Type</font></td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>Attack</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>Attack</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>Defense</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>Defense</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>HP</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>HP</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>SP Attack</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>SP Attack</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>SP Defense</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>SP Defense</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>Speed</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>Speed</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>Weight</td>
-    <td></td>
+    <td><font size="3px" face="Arial" color="red";>Weight</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   <tr>
-    <td>Total moves</td>
-    <td>rrrrrrrrr</td>
+    <td><font size="3px" face="Arial" color="red";>Total moves</td>
+    <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
   </table>
     </div>
