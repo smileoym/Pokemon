@@ -9,6 +9,48 @@ $( document ).ready(function() {
     $(".pokemon").click(function(event){
 	$("#rectangle19").html($(event.target).children(".hidden-info").html());
 })
+var content = '<img src="http://pokeapi.co/media/img/19.png">\
+<div>'
+var table = '</div>\
+<table border="1" style="width:100%">\
+  <tr>\
+    <td>Type</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>Attack</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>Defense</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>HP</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>SP Attack</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>SP Defense</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>Speed</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>Weight</td>\
+    <td></td>\
+  </tr>\
+  <tr>\
+    <td>Total moves</td>\
+    <td>rrrrrrrrr</td>\
+  </tr>\
+  </table>'
+
 for(var i=1; i<19; i++){
 $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
   //$.each(data.objects,function(key,val){
@@ -16,7 +58,10 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
   	console.log(data); 
   	console.log("#rectangle"+data.id+" .name");
   //});
- 	$( "#rectangle"+data.id+" .hidden-info" ).html( data.name+"#"+data.id ); 
+
+  var profileImage = '<img src="http://pokeapi.co/media/img/'+data.id+'.png"><div>'
+  
+ 	$( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+table ); 
 });
 }
 });
@@ -215,6 +260,8 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
     <div id="rectangle19" class="pokemon"> 
     <img src="http://pokeapi.co/media/img/19.png">
+
+<div>Charmander</div>
 
 <table border="1" style="width:100%">
   <tr>
