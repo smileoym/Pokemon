@@ -9,47 +9,18 @@ $( document ).ready(function() {
     $(".pokemon").click(function(event){
 	$("#rectangle19").html($(event.target).children(".hidden-info").html());
 })
+    var statistikRow = function(value, label) {
+    resalt = '<tr><td>'+label+'</td><td>'+value+'</td></tr>'
+    return resalt; 
+    }
+
+
+
 var content = '<img src="http://pokeapi.co/media/img/19.png">\
 <div>'
 var table = '</div>\
-<table border="1" style="width:100%">\
-  <tr>\
-    <td>Type</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>Attack</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>Defense</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>HP</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>SP Attack</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>SP Defense</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>Speed</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>Weight</td>\
-    <td></td>\
-  </tr>\
-  <tr>\
-    <td>Total moves</td>\
-    <td>rrrrrrrrr</td>\
-  </tr>\
-  </table>'
+<table border="1" style="width:100%">'
+var tableEnd = '</table>'
 
 for(var i=1; i<19; i++){
 $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
@@ -60,8 +31,9 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
   //});
 
   var profileImage = '<img src="http://pokeapi.co/media/img/'+data.id+'.png"><div>'
-  
- 	$( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+table ); 
+  var profileTable = table + statistikRow('25', 'Type') + statistikRow('200', 'Attack') + statistikRow('200', 'Defense') + statistikRow('200', 'HP') + statistikRow('200', 'SP Attack') + statistikRow('200', 'SP Defense') + statistikRow('200', 'Speed') + statistikRow('200', 'Weight') + statistikRow('200', 'Total moves') + tableEnd
+
+ 	$( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+profileTable ); 
 });
 }
 });
@@ -97,7 +69,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     border: 1px solid #73FFC9;
     position:fixed;
     width:220px;
-    height:340px;
+    height:380px;
     background-color:#F5FFFF;
     right:110px;
     top:195px;
