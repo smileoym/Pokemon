@@ -28,17 +28,39 @@ var table = '</div>\
 <table border="1" style="width:100%">'
 var tableEnd = '</table>'
 
+
+var currentInfo={}
+var parseData = function(d){
+    currentInfo.name = d.name
+    currentInfo.weight = d.weight
+    types = []
+    for(var i = 0; i < d.types.length; i++) {
+      types[i] = d.types[i].type.name
+    }
+    currentInfo.types = types
+    currentInfo.totalMoves = d.moves.length
+    for(var i = 0; i < d.stats.length; i++) {
+      currentInfo[d.stats[i].stat.name] = d.stats[i].base_stat
+    }
+  }
+
+
 for(var i=1; i<19; i++){
 $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
   //$.each(data.objects,function(key,val){
-    $( "#rectangle"+data.id+" .name");
+    $( "#rectangle"+data.id+" .name").html( data.name );
     console.log(data); 
     console.log("#rectangle"+data.id+" .name");
+
   //});
   //});
 
+
+
+
+  parseData(data)
   var profileImage = '<img src="http://pokeapi.co/media/img/'+data.id+'.png"><div>'
-  var profileTable = table + statisticRow('Type', data.types[0]) + statisticRow('Attack', data.attack) + statisticRow('Defense', data.defense) + statisticRow('HP', data.hp) + statisticRow('SP Attack', data['special-attack']) + statisticRow('SP Defense', data['special-defense']) + statisticRow('Speed', data.speed) + statisticRow('Weight', data.weight) + statisticRow('Total moves', data.totalMoves) + tableEnd
+  var profileTable = table + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + tableEnd
 
   
   $( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+profileTable ); 
