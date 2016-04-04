@@ -66,9 +66,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>\
 <div class="hidden-info"></div>\
 <div>\
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>\
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>\
-</div>\
+    <button class="button1">Grass</button>\
+    <button class="button2">Fire</button>\
+    </div>\
 </div>\
 '
   function displ(loadMore) {
@@ -92,6 +92,11 @@ var newDivsEnd = '.png" width="100" height="100">\
 .hidden-info{
   display: none;
 }
+
+ .backgroundColor{    
+    background-color:#FFDB0F;
+}
+
  .rectangle
   {
   padding: 30px;
@@ -103,9 +108,7 @@ var newDivsEnd = '.png" width="100" height="100">\
   border-radius: 12px;
   background-color:#FFC628;
   box-shadow: 2px 2px 2px #888888;
-
 }
-
 
 #rectangle-profile {
     border: 2px solid #945BE9;
@@ -128,14 +131,12 @@ var newDivsEnd = '.png" width="100" height="100">\
     text-align: center;
     font-size: 20px; 
     border-radius: 12px;
-    box-shadow: 2px 2px 2px #888888;
 }
 
 .pokemonImage {
     margin:10px 450px 10px 450px;   
     padding: 3px 10px 3px 10px;
-    text-align: center;
-    
+    text-align: center;  
 }
 
 .div100{    
@@ -158,36 +159,58 @@ var newDivsEnd = '.png" width="100" height="100">\
 
 
 
- #LoadMore, #LoadMore2{
+ #LoadMore{
   padding: 20px;
   border: 1px solid #945BE9;
   text-align: center;
-  margin: 110px;
+  margin: 10px 30px 10px 145px; 
+  padding: 10px 20px 10px 20px;  
   height: 20px;
   width: 220px;
   border-radius: 12px;
-  background-color:#E9DA97;
+  background-color:#FFC628;
   box-shadow: 2px 2px 2px #888888;
  }
+
+.button1 {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width:45px; 
+    height:20px
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width:45px; 
+    height:20px
+    margin: 4px 2px;
+    cursor: pointer;
+}
+  
 </style>
 
 
 </head>
 <body>
+
+<div class="backgroundColor">
+
 <div class="pokedexHead">Pokedex</div>
-<div class="pokemonImage"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="изображение" width="250" height="100"></div>  
-<div>
-
-<!-- <div class="div10">
-<div id="Pokedex">
-   <h1><font size="5px" face="Arial" color="red";>Pokedex</font></h1> 
-   <div align="center" style="width:auto; height:auto; position:relative; float:none;">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="изображение" width="250" height="100">
-   </div>
-</div> -->
-
-
-</div>
+<div class="pokemonImage"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="image" width="250" height="100"></div>  
 
 
 <div id="rectangle1" class="rectangle pokemon">
@@ -195,8 +218,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -205,8 +228,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -215,8 +238,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 <br/>
@@ -226,8 +249,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -236,8 +259,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -246,8 +269,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -257,8 +280,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -267,8 +290,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -277,8 +300,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 <!-- <div id="var" style="display: none;">  -->
@@ -289,8 +312,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -299,8 +322,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -309,8 +332,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -320,8 +343,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -330,8 +353,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 
 </div>
@@ -340,8 +363,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -351,8 +374,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -361,8 +384,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 
@@ -371,8 +394,8 @@ var newDivsEnd = '.png" width="100" height="100">\
 <div class="name"align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
 <div>
-    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>
-    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
+    <button class="button1">Grass</button>
+    <button class="button2">Fire</button>
 </div>
 </div>
 <div id="LoadMore"><a href="javascript: displ('var')">LOAD MORE</a></div>
@@ -430,7 +453,7 @@ var newDivsEnd = '.png" width="100" height="100">\
     </div>
 </div>
 
-
+ </div>
 
 </body>
 </html>
