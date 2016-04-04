@@ -6,21 +6,20 @@
 
 <script type="text/javascript">
 $( document ).ready(function() {
-    $(".pokemon").click(function(event){
-  $("#rectangle19").html($(event.target).children(".hidden-info").html());
-})
-    //ADDED
+  for(var i=1; i<19; i++){
+   renderPokemonFromAPI(i)
+  }
+  $(".pokemon").click(renderProfile)
+});
+
+var renderProfile = function(event){
+  $("#rectangle-profile").html($(event.target).children(".hidden-info").html());
+}
     
-    //ADDED
-
-    var statisticRow = function(value, label) {
-    resalt = '<tr><td>'+label+'</td><td>'+value+'</td></tr>'
-    return resalt; 
-    }
-
-//ADDED
-//ADDED
-
+  var statisticRow = function(label, value) {
+  resalt = '<tr><td><font size="3px" face="Arial" color="red";>'+label+'</font></td><td><font size="3px" face="Arial" color="blue";>'+value+'</font></td></tr>'
+  return resalt; 
+  }
 
 var content = '<img src="http://pokeapi.co/media/img/19.png">\
 <div>'
@@ -44,29 +43,48 @@ var parseData = function(d){
     }
   }
 
-
-for(var i=1; i<19; i++){
-$.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
-  //$.each(data.objects,function(key,val){
+var  renderPokemonFromAPI = function(id){
+$.get( "http://pokeapi.co/api/v2/pokemon/"+id, function( data ) {
     $( "#rectangle"+data.id+" .name").html( data.name );
     console.log(data); 
     console.log("#rectangle"+data.id+" .name");
-
-  //});
-  //});
-
-
-
-
   parseData(data)
   var profileImage = '<img src="http://pokeapi.co/media/img/'+data.id+'.png"><div>'
   var profileTable = table + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + tableEnd
 
   
-  $( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+profileTable ); 
+  $( "#rectangle"+data.id+" .hidden-info" ).html( profileImage+data.name+"#"+data.id+profileTable );
+  $(".pokemon").click(renderProfile)
 });
 }
-});
+
+var newDivsStart = '\
+<div id="rectangle'
+var newDivsImage = '" class="rectangle pokemon">\
+<img src="http://pokeapi.co/media/img/'
+var newDivsEnd = '.png" width="100" height="100">\
+<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>\
+<div class="hidden-info"></div>\
+<div>\
+    <input type="Grass" value="Grass" style="width:40px; height:20px" align="left";>\
+    <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>\
+</div>\
+</div>\
+'
+  function displ(loadMore) {
+    // if (document.getElementById(loadMore).style.display == 'none') {
+    //   document.getElementById(loadMore).style.display = 'block'
+    // } else {
+    //   document.getElementById(loadMore).style.display = 'none'
+    // }
+    var visiblePokemonsCount = $('.rectangle').length;
+    $('#rectangle'+ visiblePokemonsCount).before('<br/>');
+    for(var i = visiblePokemonsCount; i < (visiblePokemonsCount + 3); i++) {
+      $('#rectangle'+ i).after(newDivsStart + (i+1) + newDivsImage + (i+1) + newDivsEnd)
+      renderPokemonFromAPI(i+1)
+    }
+    $('#rectangle'+ i).after('<br/>')
+  }
 
 </script>
 
@@ -74,12 +92,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 .hidden-info{
   display: none;
 }
- #rectangle1,#rectangle2,#rectangle3,
- #rectangle4,#rectangle5,#rectangle6,
- #rectangle7,#rectangle8,#rectangle9,
- #rectangle10,#rectangle11,#rectangle12,
- #rectangle13,#rectangle14,#rectangle15,
- #rectangle16,#rectangle17,#rectangle18
+ .rectangle
   {
   padding: 30px;
   border: 2px solid #945BE9;
@@ -94,7 +107,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 }
 
 
-#rectangle19 {
+#rectangle-profile {
     border: 2px solid #945BE9;
     position:fixed;
     width:220px;
@@ -160,10 +173,8 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
 </div>
 
-<script type="text/javascript"> function displ(loadMore) { if (document.getElementById(loadMore).style.display == 'none') {document.getElementById(loadMore).style.display = 'block'} else {document.getElementById(loadMore).style.display = 'none'} } </script>
 
-
-<div id="rectangle1" class="pokemon">
+<div id="rectangle1" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/1.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -173,7 +184,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle2" class="pokemon">
+<div id="rectangle2" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/2.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -183,7 +194,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle3" class="pokemon">
+<div id="rectangle3" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/3.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -194,7 +205,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 <br/>
 
-<div id="rectangle4" class="pokemon">
+<div id="rectangle4" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/4.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -204,7 +215,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle5" class="pokemon">
+<div id="rectangle5" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/5.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -214,7 +225,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle6" class="pokemon">
+<div id="rectangle6" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/6.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -225,7 +236,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 
 <br/>
-<div id="rectangle7" class="pokemon">
+<div id="rectangle7" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/7.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -235,7 +246,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle8" class="pokemon">
+<div id="rectangle8" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/8.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -245,7 +256,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle9" class="pokemon">
+<div id="rectangle9" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/9.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -254,12 +265,10 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
 </div>
 </div>
-
-<div id="LoadMore"><a href="javascript: displ('var')">LOAD MORE</a></div>
-<div id="var" style="display: none;"> 
+<!-- <div id="var" style="display: none;">  -->
 
 <br/>
-<div id="rectangle10" class="pokemon">
+<div id="rectangle10" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/10.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -269,7 +278,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle11" class="pokemon">
+<div id="rectangle11" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/11.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -279,7 +288,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle12" class="pokemon">
+<div id="rectangle12" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/12.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -290,7 +299,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 
 <br/>
-<div id="rectangle13" class="pokemon">
+<div id="rectangle13" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/13.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -300,7 +309,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle14" class="pokemon">
+<div id="rectangle14" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/14.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -310,7 +319,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 
 </div>
-<div id="rectangle15" class="pokemon">
+<div id="rectangle15" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/15.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -321,7 +330,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 
 <br/>
-<div id="rectangle16" class="pokemon">
+<div id="rectangle16" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/16.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -331,7 +340,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle17" class="pokemon">
+<div id="rectangle17" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/17.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -341,7 +350,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 </div>
 </div>
 
-<div id="rectangle18" class="pokemon">
+<div id="rectangle18" class="rectangle pokemon">
 <img src="http://pokeapi.co/media/img/18.png" width="100" height="100">
 <div class="name"align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
@@ -350,7 +359,8 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
     <input type="Poison" value="Poison" style="width:40px; height:20px" align="right";>
 </div>
 </div>
-<div id="LoadMore2"><a href="javascript: displ('var')">CLOSE</a></div>
+<div id="LoadMore"><a href="javascript: displ('var')">LOAD MORE</a></div>
+<!-- <div id="LoadMore2"><a href="javascript: displ('var')">CLOSE</a></div> -->
 
 
 
@@ -358,7 +368,7 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+i, function( data ) {
 
 <div class="div200">
 
-    <div id="rectangle19" class="pokemon">
+    <div id="rectangle-profile" class="pokemon">
     <div id="imageRectangle19"><img src="http://pokeapi.co/media/img/34.png"></div>
 
 <div align="center" style="width:auto; height:auto; position:relative; float:none;"><font size="4px" face="Arial" color="blue";>Pokemon Name</font></div>
