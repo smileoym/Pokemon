@@ -5,12 +5,18 @@
   <title>Pokemon</title>
 
 <script type="text/javascript">
-$( document ).ready(function() {
+$(document).ready(function() {
   for(var i=1; i<19; i++){
    renderPokemonFromAPI(i)
   }
   $(".pokemon").click(renderProfile)
-});
+   $(document).on('click', '.abilities div', function(event){
+    var currentType = $(event.target).html()
+    alert("hey " + currentType);
+    $('.rectangle').hide()
+    $('.' + currentType).parents('.rectangle').show()
+  });
+  });
 
 var renderProfile = function(event){
   $("#rectangle-profile").html($(event.target).children(".hidden-info").html());
@@ -92,30 +98,30 @@ var newDivsEnd = '.png" width="100" height="100">\
  .backgroundColor{    
     background-color:#FFDB0F;
 }
-
+/*form with a Pokemon*/
  .rectangle {
     padding: 30px;
     border: 2px solid #945BE9;
     display: inline-block;
     margin: 10px;
     height:150px;
-    width: 100px;
+    width: 105px;
     border-radius: 12px;
     background-color:#FFC628;
     box-shadow: 2px 2px 2px #888888;
 }
 
 #rectangle-profile {
-    border: 2px solid #945BE9;
+   /* border: 2px solid #945BE9;*/
     position:fixed;
     width:220px;
     height:380px;
-    background-color:#FFC628;
+    /*background-color:#FFC628;*/
     right:110px;
     top:195px;
-    border-radius: 12px;
-    box-shadow: 2px 2px 2px #888888;
-    
+   /* border-radius: 12px;
+    box-shadow: 2px 2px 2px #888888;*/
+
 }
 
 .pokedexHead {
@@ -128,14 +134,20 @@ var newDivsEnd = '.png" width="100" height="100">\
     border-radius: 12px;
 }
 
-.div100{    
+.pokemonImage {
+    margin:10px 450px 10px 450px;   
+    padding: 3px 10px 3px 10px;
+    text-align: center;  
+}
+
+/*.div100{    
     width: 50%;
     min-height: 150px;
     background: #FFC628;
     float: left;
-}
+}*/
 /*Pokemon Name in table right */
-.div200{    
+.pokemonProfile{    
     width: 50%;
     min-height: 150px;
     background: ;
@@ -149,16 +161,16 @@ var newDivsEnd = '.png" width="100" height="100">\
     text-transform: capitalize;
 }
 
-.pokemnDisplay{    
+/*.pokemnDisplay{    
     text-align: center;
     font-size: 20px;
      
     color: blue; 
-}
+}*/
 
-#imageRectangle19{    
+/*#imageRectangle19{    
         text-align: center;
-}
+}*/
 
 
 
@@ -184,8 +196,8 @@ var newDivsEnd = '.png" width="100" height="100">\
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    width:45px; 
-    height:20px
+    /*width:45px; 
+    height:20px;*/
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -198,8 +210,8 @@ var newDivsEnd = '.png" width="100" height="100">\
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    width:45px; 
-    height:20px
+    /*width:45px; 
+    height:20px;*/
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -220,9 +232,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/1.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-1">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -230,9 +242,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/2.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-2">
+    <div class="button1" class="fire type">Poison</div>
+    <div class="button2" class="water type">Water</div>
 </div>
 </div>
 
@@ -240,9 +252,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/3.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-3">
+    <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="flying type">Flying</div>
 </div>
 </div>
 <br/>
@@ -251,9 +263,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/4.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-4">
+     <div class="button1" class="fire type">Poison</div>
+    <div class="button2" class="water type">Water</div>
 </div>
 </div>
 
@@ -261,9 +273,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/5.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-5">
+     <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="flying type">Flying</div>
 </div>
 </div>
 
@@ -271,9 +283,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/6.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-6">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -282,9 +294,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/7.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-7">
+     <div class="button1" class="fire type">Poison</div>
+    <div class="button2" class="water type">Water</div>
 </div>
 </div>
 
@@ -292,9 +304,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/8.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-8">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -302,9 +314,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/9.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-9">
+    <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 <!-- <div id="var" style="display: none;">  -->
@@ -314,9 +326,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/10.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-10">
+    <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -324,9 +336,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/11.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-11">
+      <div class="button1" class="electric type">Electric</div>
+      <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -334,9 +346,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/12.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-12">
+    <div class="button1" class="fire type">Poison</div>
+    <div class="button2" class="water type">Water</div>
 </div>
 </div>
 
@@ -345,9 +357,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/13.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-13">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -355,9 +367,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/14.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-14">
+    <div class="button1" class="fire type">Poison</div>
+    <div class="button2" class="water type">Water</div>
 </div>
 
 </div>
@@ -365,9 +377,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/15.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-15">
+    <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -376,9 +388,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/16.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-16">
+    <div class="button1" class="grass type">Grass</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -386,9 +398,9 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/17.png" width="100" height="100">
 <div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-17">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 
@@ -396,26 +408,26 @@ var newDivsEnd = '.png" width="100" height="100">\
 <img src="http://pokeapi.co/media/img/18.png" width="100" height="100">
 <div class="name"align="center" style="width:auto; height:auto; position:relative; float:none;"></div>
 <div class="hidden-info"></div>
-<div>
-    <button class="button1">Grass</button>
-    <button class="button2">Fire</button>
+<div class="abilities" id="ability-18">
+    <div class="button1" class="electric type">Electric</div>
+    <div class="button2" class="fire type">Fire</div>
 </div>
 </div>
 <div id="LoadMore"><a href="javascript: displ('var')">LOAD MORE</a></div>
-<!-- <div id="LoadMore2"><a href="javascript: displ('var')">CLOSE</a></div> -->
+
 
 
 
 </div>
 
-<div class="div200">
+<div class="pokemonProfile">
 
     <div id="rectangle-profile" class="pokemon">
-    <div id="imageRectangle19"><img src="http://pokeapi.co/media/img/34.png"></div>
+    <!-- <div id="imageRectangle19"><img src="http://pokeapi.co/media/img/34.png"></div> -->
 
-<div align="center" style="width:auto; height:auto; position:relative; float:none;"><font size="4px" face="Arial" color="blue";>Pokemon Name</font></div>
+<!-- <div class="pokemnDisplay" align="center" style="width:auto; height:auto; position:relative; float:none;"><font size="4px" face="Arial" color="blue";>Pokemon Name</font></div> -->
   
-<table border="1" style="width:100%">
+<!-- <table border="1" style="width:100%">
   <tr>
     <td><font size="3px" face="Arial" color="red";>Type</font></td>
     <td><font size="3px" face="Arial" color="blue";>value</td>
@@ -452,7 +464,7 @@ var newDivsEnd = '.png" width="100" height="100">\
     <td><font size="3px" face="Arial" color="red";>Total moves</td>
     <td><font size="3px" face="Arial" color="blue";>value</td>
   </tr>
-  </table>
+  </table> -->
     </div>
 </div>
 
