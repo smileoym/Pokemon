@@ -7,10 +7,10 @@
 <script type="text/javascript">
 
 
-var displayedType = ''
+var displayedType = '';
 
 $( document ).ready(function() {
-  for(var i=1; i<19; i++){
+  for(i=1; i<19; i++){
    renderPokemonFromAPI(i)
   }
   $(".pokemon").click(renderProfile)
@@ -39,10 +39,8 @@ var statisticRow = function(label, value) {
   return resalt; 
   }
 
-var content = '<img src="http://pokeapi.co/media/img/19.png">\
-<div>'
-var table = '</div>\
-<table border="1" style="width:100%">'
+var content = '<img src="http://pokeapi.co/media/img/19.png"><div>'
+var table = '</div><table border="1" style="width:100%">'
 var tableEnd = '</table>'
 
 
@@ -81,17 +79,10 @@ $.get( "http://pokeapi.co/api/v2/pokemon/"+id, function( data ) {
     });
   };
 
-var newDivsStart = '\
-<div id="rectangle'
-var newDivsImage = '" class="rectangle pokemon">\
-<img src="http://pokeapi.co/media/img/'
-var newDivsTypes = '.png" width="100" height="100">\
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div>\
-<div class="abilities" id="ability-'
-var newDivsEnd = '"></div>\
-<div class="hidden-info"></div>\
-</div>\
-'
+var newDivsStart = '<div id="rectangle'
+var newDivsImage = '" class="rectangle pokemon"><img src="http://pokeapi.co/media/img/'
+var newDivsTypes = '.png" width="100" height="100"><div class="name" align="center" style="width:auto; height:auto; position:relative; float:none;"></div><div class="abilities" id="ability-'
+var newDivsEnd = '"></div><div class="hidden-info"></div></div>'
 
 function displ(loadMore) {
     
@@ -145,11 +136,18 @@ function displ(loadMore) {
 .pokedexHead {
     border: 2px solid #945BE9;
     background-color: #FFC628;
-    margin:10px 500px 10px 500px;   
-    padding: 3px 10px 3px 10px;
+    font-family: Verdana, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
     text-align: center;
-    font-size: 20px; 
-    border-radius: 12px;
+    font-size: 50px; 
+    border-radius: 2px;
 }
 
 .pokemonImage {
@@ -158,12 +156,7 @@ function displ(loadMore) {
     text-align: center;  
 }
 
-/*.div100{    
-    width: 50%;
-    min-height: 150px;
-    background: #FFC628;
-    float: left;
-}*/
+
 /*Pokemon Name in table right */
 .pokemonProfile{    
     width: 50%;
@@ -177,20 +170,8 @@ function displ(loadMore) {
 
 .name{    
     text-transform: capitalize;
+    color: red;
 }
-
-/*.pokemnDisplay{    
-    text-align: center;
-    font-size: 20px;
-     
-    color: blue; 
-}*/
-
-/*#imageRectangle19{    
-        text-align: center;
-}*/
-
-
 
  #LoadMore{
     padding: 20px;
@@ -339,6 +320,17 @@ function displ(loadMore) {
    margin: 4px 2px;
    cursor: pointer;
 }
+
+.grid:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ .column {
+   width: 50%;
+   float: left;
+ }
   
 </style>
 
@@ -351,248 +343,161 @@ function displ(loadMore) {
 <div class="pokedexHead">Pokedex</div>
 <div class="pokemonImage"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="image" width="250" height="100"></div>  
 
-
-<div id="rectangle1" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/1.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-1">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle2" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/2.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-2">
-    <!-- <div class="button1" class="fire type">Poison</div>
-    <div class="button2" class="water type">Water</div> -->
-</div>
-</div>
-
-<div id="rectangle3" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/3.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-3">
-    <!-- <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="flying type">Flying</div> -->
-</div>
-</div>
-<br/>
-
-<div id="rectangle4" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/4.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-4">
-    <!--  <div class="button1 fire type">Poison</div>
-    <div class="button2 water type">Water</div> -->
-</div>
-</div>
-
-<div id="rectangle5" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/5.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-5">
-     <!-- <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="flying type">Flying</div> -->
-</div>
-</div>
-
-<div id="rectangle6" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/6.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-6">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<br/>
-<div id="rectangle7" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/7.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-7">
-     <!-- <div class="button1" class="fire type">Poison</div>
-    <div class="button2" class="water type">Water</div> -->
-</div>
-</div>
-
-<div id="rectangle8" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/8.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-8">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle9" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/9.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-9">
-    <!-- <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-<!-- <div id="var" style="display: none;">  -->
-
-<br/>
-<div id="rectangle10" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/10.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-10">
-    <!-- <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle11" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/11.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-11">
-      <!-- <div class="button1" class="electric type">Electric</div>
-      <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle12" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/12.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-12">
-    <!-- <div class="button1" class="fire type">Poison</div>
-    <div class="button2" class="water type">Water</div> -->
-</div>
-</div>
-
-<br/>
-<div id="rectangle13" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/13.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-13">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle14" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/14.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-14">
-    <!-- <div class="button1" class="fire type">Poison</div>
-    <div class="button2" class="water type">Water</div> -->
-</div>
-
-</div>
-<div id="rectangle15" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/15.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-15">
-   <!--  <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<br/>
-<div id="rectangle16" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/16.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-16">
-    <!-- <div class="button1" class="grass type">Grass</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle17" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/17.png" width="100" height="100">
-<div class="name" align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-17">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-
-<div id="rectangle18" class="rectangle pokemon">
-<img src="http://pokeapi.co/media/img/18.png" width="100" height="100">
-<div class="name"align="center" style="width:auto; height:auto; position:relative; float:none; color: red;"></div>
-<div class="hidden-info"></div>
-<div class="abilities" id="ability-18">
-    <!-- <div class="button1" class="electric type">Electric</div>
-    <div class="button2" class="fire type">Fire</div> -->
-</div>
-</div>
-<div id="LoadMore"><a href="javascript: displ('var')">LOAD MORE</a></div>
-
-
-
-
-</div>
-
-<div class="pokemonProfile">
-
-    <div id="rectangle-profile" class="pokemon">
-    <!-- <div id="imageRectangle19"><img src="http://pokeapi.co/media/img/34.png"></div> -->
-
-<!-- <div class="pokemnDisplay" align="center" style="width:auto; height:auto; position:relative; float:none;"><font size="4px" face="Arial" color="blue";>Pokemon Name</font></div> -->
-  
-<!-- <table border="1" style="width:100%">
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Type</font></td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Attack</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Defense</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>HP</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>SP Attack</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>SP Defense</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Speed</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Weight</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  <tr>
-    <td><font size="3px" face="Arial" color="red";>Total moves</td>
-    <td><font size="3px" face="Arial" color="blue";>value</td>
-  </tr>
-  </table> -->
+<div class="grid">
+    <div class="column">
+       <div id="rectangle1" class="rectangle pokemon">
+       <img src="http://pokeapi.co/media/img/1.png" width="100" height="100">
+       <div class="name" align="center"></div>
+       <div class="hidden-info"></div>
+       <div class="abilities" id="ability-1">
     </div>
 </div>
 
- </div>
+<div id="rectangle2" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/2.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-2">
+    </div>
+</div>
+
+<div id="rectangle3" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/3.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-3">
+    </div>
+</div>
+
+<div id="rectangle4" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/4.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-4">
+    </div>
+</div>
+
+<div id="rectangle5" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/5.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-5">
+     </div>
+</div>
+
+<div id="rectangle6" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/6.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-6">
+    </div>
+</div>
+
+<div id="rectangle7" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/7.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-7">
+     </div>
+</div>
+
+<div id="rectangle8" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/8.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-8">
+    </div>
+</div>
+
+<div id="rectangle9" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/9.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-9">
+    </div>
+</div>
+
+<div id="rectangle10" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/10.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-10">
+    </div>
+</div>
+
+<div id="rectangle11" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/11.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-11">
+      </div>
+</div>
+
+<div id="rectangle12" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/12.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-12">
+    </div>
+</div>
+
+<div id="rectangle13" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/13.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-13">
+    </div>
+</div>
+
+<div id="rectangle14" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/14.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-14">
+    </div>
+
+</div>
+<div id="rectangle15" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/15.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-15">
+   </div>
+</div>
+
+<div id="rectangle16" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/16.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-16">
+    </div>
+</div>
+
+<div id="rectangle17" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/17.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-17">
+    </div>
+</div>
+
+<div id="rectangle18" class="rectangle pokemon">
+<img src="http://pokeapi.co/media/img/18.png" width="100" height="100" alt="pokemon.picture">
+<div class="name" align="center"></div>
+<div class="hidden-info"></div>
+<div class="abilities" id="ability-18">
+    </div>
+</div>
+<div onclick="displ()" id="LoadMore">LOAD MORE</div>
+
+</div>
+
+<div class="column">
+    <div class="pokemonProfile">
+    <div id="rectangle-profile" class="pokemon">
+    
+    </div>
+</div>
 
 </body>
 </html>
