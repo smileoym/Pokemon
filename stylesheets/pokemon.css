@@ -4,6 +4,10 @@
   display: table;
   clear: both;
 }
+.grid {
+  margin-right: 10%;
+  margin-left: 10%;
+}
 .column {
   width: 50%;
   float: left;
@@ -13,21 +17,25 @@
   background-color: #FFC628;
   font-family: Verdana, sans-serif;
   margin-top: 20px;
-  margin-bottom: 50px;
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-bottom: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
   padding-top: 5px;
-  padding-right: 10px;
+  padding-right: 0.010869565217391304%;
   padding-bottom: 5px;
-  padding-left: 10px;
+  padding-left: 0.010869565217391304%;
   text-align: center;
-  font-size: 50px; 
+  font-size: 50px;
   border-radius: 2px;
 }
 .pokemonImage {
-  margin:10px 450px 10px 450px;   
-  padding: 3px 10px 3px 10px;
+  margin-right: 10%;
+  margin-left: 10%;
   text-align: center;  
+}
+.pokemonImage img {
+  max-width: 100%;
+  height: 100px;
 }
 #LoadMore {
   padding: 20px;
@@ -43,16 +51,20 @@
 }
 
 /*form with a Pokemon*/
-.rectangle {
-  padding: 30px;
+.pokemon {
+  padding: 2.5%;
   border: 2px solid #945BE9;
   display: inline-block;
-  margin: 10px;
+  margin: 1%;
   height:160px;
-  width: 110px;
+  width: 24%;
   border-radius: 12px;
   background-color:#FFC628;
   box-shadow: 2px 2px 2px #888888;
+  text-align: center;
+}
+.pokemon img {
+  max-width: 100%;
 }
 .hidden-info {
   display: none;
@@ -112,7 +124,7 @@
   width: 220px;
   height: 380px;
   background-color: #FFC628;
-  top: 272px;
+  top: 222px;
   border-radius: 12px;
   box-shadow: 2px 2px 2px #888888;
   display: none;
