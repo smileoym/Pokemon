@@ -1,12 +1,13 @@
 /*layout*/
+.grid,.pokemonImage,.pokedexHead {
+  margin-right: 10%;
+  margin-left: 10%;
+  max-width: 1055px;
+}
 .grid:after {
   content: "";
   display: table;
   clear: both;
-}
-.grid {
-  margin-right: 10%;
-  margin-left: 10%;
 }
 .column {
   width: 50%;
@@ -18,8 +19,6 @@
   font-family: Verdana, sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: 10%;
-  margin-left: 10%;
   padding-top: 5px;
   padding-right: 0.010869565217391304%;
   padding-bottom: 5px;
@@ -29,8 +28,6 @@
   border-radius: 2px;
 }
 .pokemonImage {
-  margin-right: 10%;
-  margin-left: 10%;
   text-align: center;  
 }
 .pokemonImage img {
@@ -56,7 +53,7 @@
   border: 2px solid #945BE9;
   display: inline-block;
   margin: 1%;
-  height:160px;
+  height:200px;
   width: 24%;
   border-radius: 12px;
   background-color:#FFC628;
@@ -131,7 +128,9 @@
 }
 #rectangle-profile table {
   border: 1px solid black;
-  width: 100%;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 #rectangle-profile table td{
   border: 1px solid black;
@@ -149,4 +148,26 @@
   color: blue;
   text-align: center;
   text-transform: capitalize;
+}
+
+@media (max-width: 1350px) {
+
+}
+@media (max-width: 1200px) {
+  /*dirty hack for charizard wired stripe*/
+  #rectangle6 img {
+    height: 120px;
+  }
+}
+@media (max-width: 1024px) {
+  /*dirty hack for charizard wired stripe*/
+  #rectangle6 img {
+    height: 46%;
+  }
+}
+@media (max-width: 860px) {
+  /*dirty hack for charizard wired stripe*/
+  #rectangle6 img {
+    height: 80px;
+  }
 }

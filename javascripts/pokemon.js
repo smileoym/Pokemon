@@ -7,11 +7,11 @@ $(document).ready(function() {
   $(document).on('click', '.abilities div', function(event) {
     var currentType = $(event.target).html()
     if (displayedType == currentType) {
-      $('.rectangle').show()
+      $('.pokemon').show()
       displayedType = ''
     } else {
-      $('.rectangle').hide()
-      $('.' + currentType).parents('.rectangle').show()
+      $('.pokemon').hide()
+      $('.' + currentType).parents('.pokemon').show()
       displayedType = currentType
     }
   })
@@ -61,12 +61,12 @@ var renderPokemonFromAPI = function(id) {
 };
 
 var newDivsStart = '<div id="rectangle'
-var newDivsImage = '" class="rectangle pokemon"><img src="http://pokeapi.co/media/img/'
+var newDivsImage = '" class="pokemon"><img src="http://pokeapi.co/media/img/'
 var newDivsTypes = '.png" alt="pokemon picture" width="100" height="100"><div class="name"></div><div class="abilities" id="ability-'
 var newDivsEnd = '"></div><div class="hidden-info"></div></div>'
 
 function displ(loadMore) {
-  var visiblePokemonsCount = $('.rectangle').length;
+  var visiblePokemonsCount = $('.pokemon').length;
   for (var i = visiblePokemonsCount; i < (visiblePokemonsCount + 3); i++) {
     $('#rectangle' + i).after(newDivsStart + (i + 1) + newDivsImage + (i + 1) + newDivsTypes + (i + 1) + newDivsEnd)
     renderPokemonFromAPI(i + 1)
