@@ -35,34 +35,27 @@ var statisticRow = function(label, value) {
   return resalt;
 }
 
-var content = '<img src="http://pokeapi.co/media/img/19.png"><div>'
-var table = '</div><table>'
-var tableEnd = '</table>'
-
-
-var currentInfo = {}
 var parseData = function(d) {
+  var currentInfo = {}
   currentInfo.name = d.name
   currentInfo.weight = d.weight
-  types = []
+  currentInfo.types = []
   for (var i = 0; i < d.types.length; i++) {
-    types[i] = d.types[i].type.name
+    currentInfo.types[i] = d.types[i].type.name
   }
-  currentInfo.types = types
   currentInfo.totalMoves = d.moves.length
   for (var i = 0; i < d.stats.length; i++) {
     currentInfo[d.stats[i].stat.name] = d.stats[i].base_stat
   }
+  return currentInfo;
 }
 
 var renderPokemonFromAPI = function(id) {
   $.get("http://pokeapi.co/api/v2/pokemon/" + id, function(data) {
     $("#rectangle" + data.id + " .name").html(data.name);
-    console.log(data);
-    console.log("#rectangle" + data.id + " .name");
-    parseData(data)
+    currentInfo = parseData(data)
     var profileImage = '<img src="http://pokeapi.co/media/img/' + data.id + '.png" alt="pokemon picture"><div>'
-    var profileTable = table + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + tableEnd
+    var profileTable = '</div><table>' + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + '</table>'
     $("#rectangle" + data.id + " .hidden-info").html(profileImage + data.name + "#" + data.id + profileTable);
     $(".pokemon").click(renderProfile)
     for (var y = 0; y < data.types.length; y++) {
