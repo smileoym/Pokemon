@@ -1,126 +1,651 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="javascripts/pokemon.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/pokemon.css">
 
-    <title>Pokemon</title>
-  </head>
-  <body>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="javascripts/pokemon.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/pokemon.css">
 
-    <div class="backgroundColor"></div>
+  <title>Pokemon</title>
+</head>
 
-    <div class="pokedexHead">Pokedex</div>
-    <div class="pokemonImage"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="pokemon picture" width="250" height="100"></div>
+<body>
 
-    <div class="grid">
-      <div class="column">
-        <div id="rectangle1" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/1.png" alt="pokemon picture" width="100" height="100">
-          <div class="name">bulbasaur</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/1.png" alt="pokemon picture"><div>bulbasaur#1</div><table><tbody><tr><td class="key">Type</td><td class="value">poison</td></tr><tr><td class="key">Attack</td><td class="value">49</td></tr><tr><td class="key">Defense</td><td class="value">49</td></tr><tr><td class="key">HP</td><td class="value">45</td></tr><tr><td class="key">SP Attack</td><td class="value">65</td></tr><tr><td class="key">SP Defense</td><td class="value">65</td></tr><tr><td class="key">Speed</td><td class="value">45</td></tr><tr><td class="key">Weight</td><td class="value">69</td></tr><tr><td class="key">Total moves</td><td class="value">77</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-1"><div class="poison type">poison</div><div class="grass type">grass</div></div>
+  <div class="backgroundColor"></div>
+
+  <div class="pokedexHead">Pokedex</div>
+  <div class="pokemonImage"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png" alt="pokemon picture" width="250" height="100"></div>
+
+  <div class="grid">
+    <div class="column">
+      <div id="rectangle1" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/1.png" alt="pokemon picture" width="100" height="100">
+        <div class="name">bulbasaur</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/1.png" alt="pokemon picture">
+          <div>bulbasaur#1</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">poison</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">49</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">49</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">45</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">45</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">69</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">77</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
-        <div id="rectangle2" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/2.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">ivysaur</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/2.png" alt="pokemon picture"><div>ivysaur#2</div><table><tbody><tr><td class="key">Type</td><td class="value">poison</td></tr><tr><td class="key">Attack</td><td class="value">62</td></tr><tr><td class="key">Defense</td><td class="value">63</td></tr><tr><td class="key">HP</td><td class="value">60</td></tr><tr><td class="key">SP Attack</td><td class="value">80</td></tr><tr><td class="key">SP Defense</td><td class="value">80</td></tr><tr><td class="key">Speed</td><td class="value">60</td></tr><tr><td class="key">Weight</td><td class="value">130</td></tr><tr><td class="key">Total moves</td><td class="value">65</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-2">
-          <div class="poison type">poison</div><div class="grass type">grass</div></div>
-        </div>
-
-        <div id="rectangle3" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/3.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">venusaur</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/3.png" alt="pokemon picture"><div>venusaur#3</div><table><tbody><tr><td class="key">Type</td><td class="value">poison</td></tr><tr><td class="key">Attack</td><td class="value">82</td></tr><tr><td class="key">Defense</td><td class="value">83</td></tr><tr><td class="key">HP</td><td class="value">80</td></tr><tr><td class="key">SP Attack</td><td class="value">100</td></tr><tr><td class="key">SP Defense</td><td class="value">100</td></tr><tr><td class="key">Speed</td><td class="value">80</td></tr><tr><td class="key">Weight</td><td class="value">1000</td></tr><tr><td class="key">Total moves</td><td class="value">76</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-3">
-          <div class="poison type">poison</div><div class="grass type">grass</div></div>
-        </div>
-
-        <div id="rectangle4" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/4.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">charmander</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/4.png" alt="pokemon picture"><div>charmander#4</div><table><tbody><tr><td class="key">Type</td><td class="value">fire</td></tr><tr><td class="key">Attack</td><td class="value">52</td></tr><tr><td class="key">Defense</td><td class="value">43</td></tr><tr><td class="key">HP</td><td class="value">39</td></tr><tr><td class="key">SP Attack</td><td class="value">60</td></tr><tr><td class="key">SP Defense</td><td class="value">50</td></tr><tr><td class="key">Speed</td><td class="value">65</td></tr><tr><td class="key">Weight</td><td class="value">85</td></tr><tr><td class="key">Total moves</td><td class="value">92</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-4">
-          <div class="fire type">fire</div></div>
-        </div>
-
-        <div id="rectangle5" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/5.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">charmeleon</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/5.png" alt="pokemon picture"><div>charmeleon#5</div><table><tbody><tr><td class="key">Type</td><td class="value">fire</td></tr><tr><td class="key">Attack</td><td class="value">64</td></tr><tr><td class="key">Defense</td><td class="value">58</td></tr><tr><td class="key">HP</td><td class="value">58</td></tr><tr><td class="key">SP Attack</td><td class="value">80</td></tr><tr><td class="key">SP Defense</td><td class="value">65</td></tr><tr><td class="key">Speed</td><td class="value">80</td></tr><tr><td class="key">Weight</td><td class="value">190</td></tr><tr><td class="key">Total moves</td><td class="value">83</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-5">
-          <div class="fire type">fire</div></div>
-        </div>
-
-        <div id="rectangle6" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/6.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">charizard</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/6.png" alt="pokemon picture"><div>charizard#6</div><table><tbody><tr><td class="key">Type</td><td class="value">flying</td></tr><tr><td class="key">Attack</td><td class="value">84</td></tr><tr><td class="key">Defense</td><td class="value">78</td></tr><tr><td class="key">HP</td><td class="value">78</td></tr><tr><td class="key">SP Attack</td><td class="value">109</td></tr><tr><td class="key">SP Defense</td><td class="value">85</td></tr><tr><td class="key">Speed</td><td class="value">100</td></tr><tr><td class="key">Weight</td><td class="value">905</td></tr><tr><td class="key">Total moves</td><td class="value">106</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-6">
-          <div class="flying type">flying</div><div class="fire type">fire</div></div>
-        </div>
-
-        <div id="rectangle7" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/7.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">squirtle</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/7.png" alt="pokemon picture"><div>squirtle#7</div><table><tbody><tr><td class="key">Type</td><td class="value">water</td></tr><tr><td class="key">Attack</td><td class="value">48</td></tr><tr><td class="key">Defense</td><td class="value">65</td></tr><tr><td class="key">HP</td><td class="value">44</td></tr><tr><td class="key">SP Attack</td><td class="value">50</td></tr><tr><td class="key">SP Defense</td><td class="value">64</td></tr><tr><td class="key">Speed</td><td class="value">43</td></tr><tr><td class="key">Weight</td><td class="value">90</td></tr><tr><td class="key">Total moves</td><td class="value">90</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-7">
-          <div class="water type">water</div></div>
-        </div>
-
-        <div id="rectangle8" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/8.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">wartortle</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/8.png" alt="pokemon picture"><div>wartortle#8</div><table><tbody><tr><td class="key">Type</td><td class="value">water</td></tr><tr><td class="key">Attack</td><td class="value">63</td></tr><tr><td class="key">Defense</td><td class="value">80</td></tr><tr><td class="key">HP</td><td class="value">59</td></tr><tr><td class="key">SP Attack</td><td class="value">65</td></tr><tr><td class="key">SP Defense</td><td class="value">80</td></tr><tr><td class="key">Speed</td><td class="value">58</td></tr><tr><td class="key">Weight</td><td class="value">225</td></tr><tr><td class="key">Total moves</td><td class="value">75</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-8">
-          <div class="water type">water</div></div>
-        </div>
-
-        <div id="rectangle9" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/9.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">blastoise</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/9.png" alt="pokemon picture"><div>blastoise#9</div><table><tbody><tr><td class="key">Type</td><td class="value">water</td></tr><tr><td class="key">Attack</td><td class="value">83</td></tr><tr><td class="key">Defense</td><td class="value">100</td></tr><tr><td class="key">HP</td><td class="value">79</td></tr><tr><td class="key">SP Attack</td><td class="value">85</td></tr><tr><td class="key">SP Defense</td><td class="value">105</td></tr><tr><td class="key">Speed</td><td class="value">78</td></tr><tr><td class="key">Weight</td><td class="value">855</td></tr><tr><td class="key">Total moves</td><td class="value">92</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-9">
-          <div class="water type">water</div></div>
-        </div>
-
-        <div id="rectangle10" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/10.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">caterpie</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/10.png" alt="pokemon picture"><div>caterpie#10</div><table><tbody><tr><td class="key">Type</td><td class="value">bug</td></tr><tr><td class="key">Attack</td><td class="value">30</td></tr><tr><td class="key">Defense</td><td class="value">35</td></tr><tr><td class="key">HP</td><td class="value">45</td></tr><tr><td class="key">SP Attack</td><td class="value">20</td></tr><tr><td class="key">SP Defense</td><td class="value">20</td></tr><tr><td class="key">Speed</td><td class="value">45</td></tr><tr><td class="key">Weight</td><td class="value">29</td></tr><tr><td class="key">Total moves</td><td class="value">5</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-10">
-          <div class="bug type">bug</div></div>
-        </div>
-
-        <div id="rectangle11" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/11.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">metapod</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/11.png" alt="pokemon picture"><div>metapod#11</div><table><tbody><tr><td class="key">Type</td><td class="value">bug</td></tr><tr><td class="key">Attack</td><td class="value">20</td></tr><tr><td class="key">Defense</td><td class="value">55</td></tr><tr><td class="key">HP</td><td class="value">50</td></tr><tr><td class="key">SP Attack</td><td class="value">25</td></tr><tr><td class="key">SP Defense</td><td class="value">25</td></tr><tr><td class="key">Speed</td><td class="value">30</td></tr><tr><td class="key">Weight</td><td class="value">99</td></tr><tr><td class="key">Total moves</td><td class="value">5</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-11">
-          <div class="bug type">bug</div></div>
-        </div>
-
-        <div id="rectangle12" class="rectangle pokemon">
-          <img src="http://pokeapi.co/media/img/12.png" width="100" height="100" alt="pokemon picture">
-          <div class="name">butterfree</div>
-          <div class="hidden-info"><img src="http://pokeapi.co/media/img/12.png" alt="pokemon picture"><div>butterfree#12</div><table><tbody><tr><td class="key">Type</td><td class="value">flying</td></tr><tr><td class="key">Attack</td><td class="value">45</td></tr><tr><td class="key">Defense</td><td class="value">50</td></tr><tr><td class="key">HP</td><td class="value">60</td></tr><tr><td class="key">SP Attack</td><td class="value">90</td></tr><tr><td class="key">SP Defense</td><td class="value">80</td></tr><tr><td class="key">Speed</td><td class="value">70</td></tr><tr><td class="key">Weight</td><td class="value">320</td></tr><tr><td class="key">Total moves</td><td class="value">76</td></tr></tbody></table></div>
-          <div class="abilities" id="ability-12">
-          <div class="flying type">flying</div><div class="bug type">bug</div></div>
-        </div>
-
-        <div onclick="displ()" id="LoadMore">LOAD MORE</div>
-
-      </div>
-
-      <div class="column">
-        <div class="pokemonProfile">
-          <div id="rectangle-profile" class="pokemon"></div>
+        <div class="abilities" id="ability-1">
+          <div class="poison type">poison</div>
+          <div class="grass type">grass</div>
         </div>
       </div>
+
+      <div id="rectangle2" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/2.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">ivysaur</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/2.png" alt="pokemon picture">
+          <div>ivysaur#2</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">poison</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">62</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">63</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">60</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">60</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">130</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">65</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-2">
+          <div class="poison type">poison</div>
+          <div class="grass type">grass</div>
+        </div>
+      </div>
+
+      <div id="rectangle3" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/3.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">venusaur</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/3.png" alt="pokemon picture">
+          <div>venusaur#3</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">poison</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">82</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">83</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">100</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">100</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">1000</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">76</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-3">
+          <div class="poison type">poison</div>
+          <div class="grass type">grass</div>
+        </div>
+      </div>
+
+      <div id="rectangle4" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/4.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">charmander</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/4.png" alt="pokemon picture">
+          <div>charmander#4</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">fire</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">52</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">43</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">39</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">60</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">50</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">85</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">92</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-4">
+          <div class="fire type">fire</div>
+        </div>
+      </div>
+
+      <div id="rectangle5" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/5.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">charmeleon</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/5.png" alt="pokemon picture">
+          <div>charmeleon#5</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">fire</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">64</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">58</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">58</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">190</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">83</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-5">
+          <div class="fire type">fire</div>
+        </div>
+      </div>
+
+      <div id="rectangle6" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/6.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">charizard</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/6.png" alt="pokemon picture">
+          <div>charizard#6</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">flying</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">84</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">78</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">78</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">109</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">85</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">100</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">905</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">106</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-6">
+          <div class="flying type">flying</div>
+          <div class="fire type">fire</div>
+        </div>
+      </div>
+
+      <div id="rectangle7" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/7.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">squirtle</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/7.png" alt="pokemon picture">
+          <div>squirtle#7</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">water</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">48</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">44</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">50</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">64</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">43</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">90</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-7">
+          <div class="water type">water</div>
+        </div>
+      </div>
+
+      <div id="rectangle8" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/8.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">wartortle</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/8.png" alt="pokemon picture">
+          <div>wartortle#8</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">water</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">63</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">59</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">65</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">58</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">225</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">75</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-8">
+          <div class="water type">water</div>
+        </div>
+      </div>
+
+      <div id="rectangle9" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/9.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">blastoise</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/9.png" alt="pokemon picture">
+          <div>blastoise#9</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">water</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">83</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">100</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">79</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">85</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">105</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">78</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">855</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">92</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-9">
+          <div class="water type">water</div>
+        </div>
+      </div>
+
+      <div id="rectangle10" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/10.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">caterpie</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/10.png" alt="pokemon picture">
+          <div>caterpie#10</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">bug</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">30</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">35</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">45</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">20</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">20</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">45</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">29</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-10">
+          <div class="bug type">bug</div>
+        </div>
+      </div>
+
+      <div id="rectangle11" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/11.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">metapod</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/11.png" alt="pokemon picture">
+          <div>metapod#11</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">bug</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">20</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">55</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">50</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">25</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">25</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">30</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">99</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-11">
+          <div class="bug type">bug</div>
+        </div>
+      </div>
+
+      <div id="rectangle12" class="rectangle pokemon">
+        <img src="http://pokeapi.co/media/img/12.png" width="100" height="100" alt="pokemon picture">
+        <div class="name">butterfree</div>
+        <div class="hidden-info"><img src="http://pokeapi.co/media/img/12.png" alt="pokemon picture">
+          <div>butterfree#12</div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="key">Type</td>
+                <td class="value">flying</td>
+              </tr>
+              <tr>
+                <td class="key">Attack</td>
+                <td class="value">45</td>
+              </tr>
+              <tr>
+                <td class="key">Defense</td>
+                <td class="value">50</td>
+              </tr>
+              <tr>
+                <td class="key">HP</td>
+                <td class="value">60</td>
+              </tr>
+              <tr>
+                <td class="key">SP Attack</td>
+                <td class="value">90</td>
+              </tr>
+              <tr>
+                <td class="key">SP Defense</td>
+                <td class="value">80</td>
+              </tr>
+              <tr>
+                <td class="key">Speed</td>
+                <td class="value">70</td>
+              </tr>
+              <tr>
+                <td class="key">Weight</td>
+                <td class="value">320</td>
+              </tr>
+              <tr>
+                <td class="key">Total moves</td>
+                <td class="value">76</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="abilities" id="ability-12">
+          <div class="flying type">flying</div>
+          <div class="bug type">bug</div>
+        </div>
+      </div>
+
+      <div onclick="displ()" id="LoadMore">LOAD MORE</div>
+
     </div>
 
-  </body>
+    <div class="column">
+      <div class="pokemonProfile">
+        <div id="rectangle-profile" class="pokemon"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
