@@ -6,6 +6,7 @@ $(document).ready(function() {
     $("#rectangle-profile").hide();
   })
   $(document).on('click', '.abilities div', function(event) {
+    $('.type').removeClass('closeable')
     var currentType = $(event.target).html()
     if (displayedType == currentType) {
       $('.pokemon').show()
@@ -13,6 +14,7 @@ $(document).ready(function() {
     } else {
       $('.pokemon').hide()
       $('.' + currentType).parents('.pokemon').show()
+      $('.' + currentType).addClass('closeable')
       displayedType = currentType
     }
   })
@@ -27,18 +29,18 @@ var statisticRow = function(label, value) {
 }
 
 var parseData = function(d) {
-  var currentInfo = {}
-  currentInfo.name = d.name
-  currentInfo.weight = d.weight
-  currentInfo.types = []
+  var info = {}
+  info.name = d.name
+  info.weight = d.weight
+  info.types = []
   d.types.forEach(function(t, i) {
-    currentInfo.types[i] = t.type.name
+    info.types[i] = t.type.name
   });
-  currentInfo.totalMoves = d.moves.length
+  info.totalMoves = d.moves.length
   d.stats.forEach(function(s) {
-    currentInfo[s.stat.name] = s.base_stat
+    info[s.stat.name] = s.base_stat
   });
-  return currentInfo;
+  return info;
 }
 
 var formatId = function(id) {
@@ -49,12 +51,31 @@ var formatId = function(id) {
   }
 }
 
+var profileTableContents = function(data){
+  var contents = ''
+  var dataArray = [
+    ['Type', data.types.join(', ')],
+    ['Attack', data.attack],
+    ['Defense', data.defense],
+    ['HP', data.hp],
+    ['SP Attack', data['special-attack']],
+    ['SP Defense', data['special-defense']],
+    ['Speed', data.speed],
+    ['Weight', data.weight],
+    ['Total moves', data.totalMoves]
+  ];
+  dataArray.forEach(function(i) {
+    contents += statisticRow(i[0], i[1])
+  });
+  return contents;
+}
+
 var renderPokemonFromAPI = function(id) {
   $.get("http://pokeapi.co/api/v2/pokemon/" + id, function(data) {
     $("#rectangle" + data.id + " .name").html(data.name);
     currentInfo = parseData(data)
     var profileImage = '<div class="hide-profile"></div><img src="http://pokeapi.co/media/img/' + data.id + '.png" alt="pokemon picture"><div>'
-    var profileTable = '</div><table>' + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + '</table>'
+    var profileTable = '</div><table>' + profileTableContents(currentInfo) + '</table>'
     $("#rectangle" + data.id + " .hidden-info").html(profileImage + data.name + formatId(data.id) + profileTable);
     $(".pokemon").click(renderProfile)
     for (var y = 0; y < data.types.length; y++) {

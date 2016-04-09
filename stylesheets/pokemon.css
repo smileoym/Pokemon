@@ -103,6 +103,7 @@ body {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .electric { background-color: #FFFF00; }
 .poison { background-color: #9900FF; }
@@ -122,6 +123,13 @@ body {
 .ice { background-color: #CC9900; }
 .dragon { background-color: #CC9900; }
 .dark { background-color: #003399; }
+.closeable {
+  padding-right: 25px;
+  background-image: url('../images/close.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: right center;
+}
 
 /*Pokemon info in table right */
 #rectangle-profile {
