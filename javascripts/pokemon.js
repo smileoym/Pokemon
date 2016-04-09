@@ -18,10 +18,12 @@ $(document).ready(function() {
       displayedType = currentType
     }
   })
+  $('#load-more').click(displayProfile)
 });
 
 var renderProfile = function(event) {
-  $("#rectangle-profile").html($(event.target).children(".hidden-info").html()).show();
+  var content = $(event.target).parents('.pokemon').children(".hidden-info").html();
+  $("#rectangle-profile").html(content).show();
 }
 
 var statisticRow = function(label, value) {
@@ -87,7 +89,7 @@ var renderPokemonFromAPI = function(id) {
   });
 };
 
-function displ(loadMore) {
+var displayProfile = function(event) {
   var visiblePokemonsCount = $('.pokemon').length;
   [0, 1, 2].forEach(function(i) {
     var nextPokemon = visiblePokemonsCount + i
