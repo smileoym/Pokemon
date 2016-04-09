@@ -13,8 +13,7 @@ $(document).ready(function() {
       displayedType = ''
     } else {
       $('.pokemon').hide()
-      $('.' + currentType).parents('.pokemon').show()
-      $('.' + currentType).addClass('closeable')
+      $('.' + currentType).addClass('closeable').parents('.pokemon').show()
       displayedType = currentType
     }
   })
@@ -22,7 +21,12 @@ $(document).ready(function() {
 });
 
 var renderProfile = function(event) {
-  var content = $(event.target).parents('.pokemon').children(".hidden-info").html();
+  var content = ''
+  if ($(event.target).hasClass('pokemon')) {
+    content = $(event.target).children(".hidden-info").html();
+  } else {
+    content = $(event.target).parents('.pokemon').children(".hidden-info").html();
+  }
   $("#rectangle-profile").html(content).show();
 }
 

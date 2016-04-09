@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   #rectangle-profile img {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -20,9 +20,10 @@
     float: left;
   }
 }
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #rectangle-profile {
     width: 25%;
+    top: 15%;
   }
   #rectangle-profile div {
     font-size: 1.5em;
@@ -36,7 +37,7 @@
     float: left;
   }
 }
-@media (max-width: 860px) {
+@media screen and (max-width: 860px) {
   .column-left {
     width: 100%;
     float: left;
@@ -48,5 +49,6 @@
   #rectangle-profile {
     left: 32%;
     width: 32%;
+    top: 10%;
   }
 }
