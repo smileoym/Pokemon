@@ -98,7 +98,7 @@ var displayProfile = function(event) {
   [0, 1, 2].forEach(function(i) {
     var nextPokemon = visiblePokemonsCount + i
     var currentPokemon = visiblePokemonsCount + i - 1
-    var newContent = $('#pokemon-template').html().replace(/1/g, nextPokemon)
+    var newContent = $('#pokemon-template').html().replace(/699/g, nextPokemon)
     $('#rectangle' + currentPokemon).after(newContent)
     renderPokemonFromAPI(nextPokemon)
   });
