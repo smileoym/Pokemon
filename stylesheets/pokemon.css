@@ -168,3 +168,14 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
+.hide-profile {
+  background-image: url('../images/close.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  top: -30px;
+  left: 92%;
+  cursor: pointer;
+}
