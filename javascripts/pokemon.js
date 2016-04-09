@@ -22,10 +22,7 @@ var renderProfile = function(event) {
 }
 
 var statisticRow = function(label, value) {
-  resalt = '<tr><td class="key">' + label +
-    '</td><td class="value">' + value +
-    '</td></tr>'
-  return resalt;
+  return '<tr><td class="key">' + label + '</td><td class="value">' + value + '</td></tr>';
 }
 
 var parseData = function(d) {
@@ -33,14 +30,22 @@ var parseData = function(d) {
   currentInfo.name = d.name
   currentInfo.weight = d.weight
   currentInfo.types = []
-  for (var i = 0; i < d.types.length; i++) {
-    currentInfo.types[i] = d.types[i].type.name
-  }
+  d.types.forEach(function(t, i) {
+    currentInfo.types[i] = t.type.name
+  });
   currentInfo.totalMoves = d.moves.length
-  for (var i = 0; i < d.stats.length; i++) {
-    currentInfo[d.stats[i].stat.name] = d.stats[i].base_stat
-  }
+  d.stats.forEach(function(s) {
+    currentInfo[s.stat.name] = s.base_stat
+  });
   return currentInfo;
+}
+
+var formatId = function(id) {
+  if (id < 100) {
+    return ' #0'+id;
+  } else {
+    return ' #'+id;
+  }
 }
 
 var renderPokemonFromAPI = function(id) {
@@ -49,7 +54,7 @@ var renderPokemonFromAPI = function(id) {
     currentInfo = parseData(data)
     var profileImage = '<img src="http://pokeapi.co/media/img/' + data.id + '.png" alt="pokemon picture"><div>'
     var profileTable = '</div><table>' + statisticRow('Type', currentInfo.types[0]) + statisticRow('Attack', currentInfo.attack) + statisticRow('Defense', currentInfo.defense) + statisticRow('HP', currentInfo.hp) + statisticRow('SP Attack', currentInfo['special-attack']) + statisticRow('SP Defense', currentInfo['special-defense']) + statisticRow('Speed', currentInfo.speed) + statisticRow('Weight', currentInfo.weight) + statisticRow('Total moves', currentInfo.totalMoves) + '</table>'
-    $("#rectangle" + data.id + " .hidden-info").html(profileImage + data.name + "#" + data.id + profileTable);
+    $("#rectangle" + data.id + " .hidden-info").html(profileImage + data.name + formatId(data.id) + profileTable);
     $(".pokemon").click(renderProfile)
     for (var y = 0; y < data.types.length; y++) {
       data.types[y].type.name
@@ -60,15 +65,13 @@ var renderPokemonFromAPI = function(id) {
   });
 };
 
-var newDivsStart = '<div id="rectangle'
-var newDivsImage = '" class="pokemon"><img src="http://pokeapi.co/media/img/'
-var newDivsTypes = '.png" alt="pokemon picture" width="100" height="100"><div class="name"></div><div class="abilities" id="ability-'
-var newDivsEnd = '"></div><div class="hidden-info"></div></div>'
-
 function displ(loadMore) {
   var visiblePokemonsCount = $('.pokemon').length;
-  for (var i = visiblePokemonsCount; i < (visiblePokemonsCount + 3); i++) {
-    $('#rectangle' + i).after(newDivsStart + (i + 1) + newDivsImage + (i + 1) + newDivsTypes + (i + 1) + newDivsEnd)
-    renderPokemonFromAPI(i + 1)
-  }
+  [0, 1, 2].forEach(function(i) {
+    var nextPokemon = visiblePokemonsCount + i
+    var currentPokemon = visiblePokemonsCount + i - 1
+    var newContent = $('#pokemon-template').html().replace(/1/g, nextPokemon)
+    $('#rectangle' + currentPokemon).after(newContent)
+    renderPokemonFromAPI(nextPokemon)
+  });
 }
