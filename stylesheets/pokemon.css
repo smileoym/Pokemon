@@ -1,10 +1,4 @@
 /*layout*/
-html {
-  font-size 16px;
-} 
-body {
-  font-size 62,5%;
-}
 .grid,.pokemonImage,.pokedexHead {
   margin-right: 10%;
   margin-left: 10%;
