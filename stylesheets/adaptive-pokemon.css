@@ -1,0 +1,52 @@
+@media (max-width: 1200px) {
+  #rectangle-profile img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  #rectangle-profile div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+  #rectangle-profile {
+    width: 25%;
+  }
+  .column-left {
+    width: 60%;
+    float: left;
+  }
+  .column-right {
+    width: 40%;
+    float: left;
+  }
+}
+@media (max-width: 1024px) {
+  #rectangle-profile {
+    width: 25%;
+  }
+  #rectangle-profile div {
+    font-size: 1.5em;
+  }
+  .column-left {
+    width: 65%;
+    float: left;
+  }
+  .column-right {
+    width: 35%;
+    float: left;
+  }
+}
+@media (max-width: 860px) {
+  .column-left {
+    width: 100%;
+    float: left;
+  }
+  .column-right {
+    width: 0%;
+    float: none;
+  }
+  #rectangle-profile {
+    left: 32%;
+    width: 32%;
+  }
+}
