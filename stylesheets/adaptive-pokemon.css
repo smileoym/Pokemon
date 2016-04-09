@@ -23,7 +23,10 @@
 @media screen and (max-width: 1024px) {
   #rectangle-profile {
     width: 25%;
-    top: 15%;
+    top: 17%;
+  }
+  .pokemonImage {
+    display: none;
   }
   #rectangle-profile div {
     font-size: 1.5em;
@@ -49,6 +52,6 @@
   #rectangle-profile {
     left: 32%;
     width: 32%;
-    top: 10%;
+    top: 17%;
   }
 }
